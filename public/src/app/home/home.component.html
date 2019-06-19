@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <a [routerLink]="['/new']" class="btn btn-primary">Create an author</a>
+    <div class="container">
+      <br><br>
+      <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Author</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let x of authors'>
+              <td>{{x.name}}</td>
+              <td><a class="btn btn-primary sp" [routerLink]="['/edit',x._id]">Edit</a>  <a class="btn btn-primary" [routerLink]="['/delete',x._id]" (click)="delete(x._id)">Delete</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+  </div>
+  
+  
